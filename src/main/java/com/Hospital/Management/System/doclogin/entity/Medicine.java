@@ -1,6 +1,5 @@
 package com.Hospital.Management.System.doclogin.entity;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,14 +12,14 @@ public class Medicine {
 
     @Id 
     @GeneratedValue (strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "drug_name")
     private String drugName;
 
     private String stock;
 
-    public Medicine(long id, String drugName, String stock) {
+    public Medicine(Long id, String drugName, String stock) {
         super();
         this.id = id;
         this.drugName = drugName;
@@ -31,11 +30,11 @@ public class Medicine {
         super();
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

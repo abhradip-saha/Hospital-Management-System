@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 public class Appointment {
     @Id 
     @GeneratedValue (strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String name;
 
@@ -20,7 +20,7 @@ public class Appointment {
 
     private String number;
 
-    public Appointment(long id, String name, String age, String symptoms, String number) {
+    public Appointment(Long id, String name, String age, String symptoms, String number) {
         super();
         this.id = id;
         this.name = name;
@@ -33,11 +33,11 @@ public class Appointment {
         super();
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

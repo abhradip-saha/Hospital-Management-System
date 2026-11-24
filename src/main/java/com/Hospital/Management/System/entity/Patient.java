@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "first_name")
     private String name;
@@ -35,7 +35,7 @@ public class Patient {
     @Column(name = "urgency")
     private String urgency;
 
-    public Patient(long id, String name, String age, String blood, String prescription, String dose, String fees,
+    public Patient(Long id, String name, String age, String blood, String prescription, String dose, String fees,
             String urgency) {
         super();
         this.id = id;
@@ -52,11 +52,11 @@ public class Patient {
         super();
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

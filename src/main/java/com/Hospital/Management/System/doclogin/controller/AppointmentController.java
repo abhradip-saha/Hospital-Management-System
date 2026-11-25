@@ -1,5 +1,8 @@
 package com.Hospital.Management.System.doclogin.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,5 +25,11 @@ public class AppointmentController {
     @PostMapping("/insert")
     public Appointment createAppointment(@RequestBody Appointment appointment) {
         return appointmentRepository.save(appointment);
+    }
+
+    @GetMapping
+    public List<Appointment> getAllAppointments()
+    {
+        return appointmentRepository.findAll();
     }
 }

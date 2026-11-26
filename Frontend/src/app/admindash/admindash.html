@@ -11,7 +11,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let patient of patients">
+        @for (patient of patients; track patient.id) {
+        <tr>
             <td>{{ patient.id }}</td>
             <td>{{ patient.name }}</td>
             <td>{{ patient.age }}</td>
@@ -20,4 +21,6 @@
             <td>{{ patient.dose }}</td>
             <td>{{ patient.urgency }}</td>
         </tr>
+        }
+    </tbody>
 </table>

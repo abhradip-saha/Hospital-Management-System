@@ -107,5 +107,13 @@ public class Patient {
     public void setFees(String fees) {
         this.fees = fees;
     }
+
+    public String getUrgency() {
+        return urgency;
+    }
+
+    public void setUrgency(String urgency) {
+        this.urgency = urgency;
+    }
 }
 

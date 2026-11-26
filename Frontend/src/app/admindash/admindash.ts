@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { Patient } from '../class/patient';
 import { PatientService } from '../service/patient.service.';
 
@@ -9,16 +9,17 @@ import { PatientService } from '../service/patient.service.';
   standalone: false,
 })
 export class Admindash {
-  patients: Patient[] = [];
+  patients = signal<Patient[]>([]);
 
   constructor(private patientService: PatientService) {}
+
   ngOnInit(): void {
     this.getPatients();
   }
 
   getPatients(): void {
     this.patientService.getPatientList().subscribe((data) => {
-      this.patients = data;
+      this.patients.set(data);
     });
   }
 }

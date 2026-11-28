@@ -49,8 +49,8 @@
   <h2 style="text-align: center; margin-top: 20px">Admin Dashboard</h2>
   <a style="color: rgb(86, 86, 86); font-size: x-large"
     ><marquee behavior="scroll" direction="left">
-      Welcome to Admin Dashboard. Please find the patient list below!!. Click Appointments to view
-      and update Appointments, Click Add Appointment to add new Appointment
+      Welcome to Admin Dashboard. View and manage the patient queue below, or select Appointments to
+      manage appointments.
     </marquee></a
   >
   <hr />
@@ -61,30 +61,47 @@
     placeholder="Search"
     (input)="searchPatients()"
   /> -->
-  <br />
-  <a style="color: rgb(86, 86, 86); font-size: xx-large">Current Patient List in the Queue</a>
+  <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 my-4">
+    <h2 class="m-0">Current Patient Queue</h2>
+    <a class="btn btn-primary" routerLink="/create-patient">
+      <span aria-hidden="true">+</span> Add Patient
+    </a>
+  </div>
+  @if (actionErrorMessage) {
+    <div class="alert alert-danger" role="alert">{{ actionErrorMessage }}</div>
+  }
   <div class="tableFixHead">
-    <br />
     <table class="table table-stripped">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Name</th>
           <th>Age</th>
           <th>Blood</th>
           <th>Prescription</th>
           <th>Dose</th>
+          <th>Fees</th>
           <th>Urgency</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         @for (patient of patients(); track patient.id) {
           <tr>
+            <td>{{ patient.id }}</td>
             <td>{{ patient.name }}</td>
             <td>{{ patient.age }}</td>
             <td>{{ patient.blood }}</td>
             <td>{{ patient.prescription }}</td>
             <td>{{ patient.dose }}</td>
+            <td>{{ patient.fees }}</td>
             <td>{{ patient.urgency }}</td>
+            <td>
+              <div class="d-flex gap-2">
+                <button (click)="updatePatient(patient)" class="btn btn-primary">Update</button>
+                <button (click)="deletePatient(patient.id)" class="btn btn-danger">Delete</button>
+              </div>
+            </td>
           </tr>
         }
       </tbody>

@@ -8,9 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { Appointment } from './appointment/appointment.component';
 import { CreateAppointmmentComponent } from './create-appointmment.component/create-appointmment.component';
 import { FormsModule } from '@angular/forms';
+import { PatientFormComponent } from './patient-form/patient-form.component';
 
 @NgModule({
-  declarations: [App, Admindash, Appointment, CreateAppointmmentComponent],
+  declarations: [App, Admindash, Appointment, CreateAppointmmentComponent, PatientFormComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

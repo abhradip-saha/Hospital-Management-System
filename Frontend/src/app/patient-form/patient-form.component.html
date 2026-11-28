@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand text-white" routerLink="/admin">ABHRADIP HOSPITALS</a>
+  <div class="ms-auto">
+    <a class="btn btn-danger" routerLink="/home">Logout</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h2 class="text-center mt-3">{{ isEditMode ? 'Update Patient' : 'Add New Patient' }}</h2>
+  @if (errorMessage) {
+    <div class="alert alert-danger" role="alert">{{ errorMessage }}</div>
+  }
+  @if (isLoading) {
+    <div class="alert alert-info" role="status">Loading patient...</div>
+  }
+  @if (!isEditMode || patientLoaded) {
+    <form (ngSubmit)="savePatient()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input id="name" type="text" class="form-control" [(ngModel)]="patient.name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input id="age" type="number" min="0" class="form-control" [(ngModel)]="patient.age" name="age" required />
+      </div>
+      <div class="form-group">
+        <label for="blood">Blood Group:</label>
+        <input id="blood" type="text" class="form-control" [(ngModel)]="patient.blood" name="blood" required />
+      </div>
+      <div class="form-group">
+        <label for="prescription">Prescription:</label>
+        <input id="prescription" type="text" class="form-control" [(ngModel)]="patient.prescription" name="prescription" required />
+      </div>
+      <div class="form-group">
+        <label for="dose">Dose:</label>
+        <input id="dose" type="text" class="form-control" [(ngModel)]="patient.dose" name="dose" required />
+      </div>
+      <div class="form-group">
+        <label for="fees">Fees:</label>
+        <input id="fees" type="number" min="0" step="0.01" class="form-control" [(ngModel)]="patient.fees" name="fees" required />
+      </div>
+      <div class="form-group">
+        <label for="urgency">Urgency:</label>
+        <input id="urgency" type="text" class="form-control" [(ngModel)]="patient.urgency" name="urgency" required />
+      </div>
+      <div class="d-flex gap-2 mt-3">
+        <button type="submit" class="btn btn-success">{{ isEditMode ? 'Update' : 'Submit' }}</button>
+        <button type="button" class="btn btn-secondary" routerLink="/admin">Cancel</button>
+      </div>
+    </form>
+  }
+</div>

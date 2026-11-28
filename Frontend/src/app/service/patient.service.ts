@@ -14,5 +14,4 @@ export class PatientService {
   getPatientList():Observable<Patient[]>{
      return this.httpClient.get<Patient[]>(`${this.baseUrl}`);
   }
-  
 }

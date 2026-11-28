@@ -26,12 +26,13 @@ public class AppointmentController {
 
     @PostMapping("/insert")
     public Appointment createAppointment(@RequestBody Appointment appointment) {
+        appointment.setId(null);
         return appointmentRepository.save(appointment);
     }
 
     @GetMapping
     public List<Appointment> getAllAppointments()
-    {
+    { 
         return appointmentRepository.findAll();
     }
 }

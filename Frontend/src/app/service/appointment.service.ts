@@ -14,4 +14,8 @@ export class AppointmentService {
   getAllAppointments(): Observable<AppointmentClass[]> {
     return this.httpClient.get<AppointmentClass[]>(`${this.baseUrl}`);
   }
+
+  createAppointment(appointment: AppointmentClass): Observable<AppointmentClass> {
+    return this.httpClient.post<AppointmentClass>(`${this.baseUrl}/insert`, appointment);
+  }
 }

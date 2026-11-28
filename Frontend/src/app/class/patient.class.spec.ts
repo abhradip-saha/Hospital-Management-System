@@ -1,4 +1,4 @@
-import { Patient } from './patient';
+import { Patient } from './patient.class';
 
 describe('Patient', () => {
   it('should create an instance', () => {

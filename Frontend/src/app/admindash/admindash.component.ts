@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Patient } from '../class/patient';
+import { Patient } from '../class/patient.class';
 import { PatientService } from '../service/patient.service.';
 
 @Component({
   selector: 'app-admindash',
-  templateUrl: './admindash.html',
-  styleUrl: './admindash.css',
+  templateUrl: './admindash.component.html',
+  styleUrl: './admindash.component.css',
   standalone: false,
 })
 export class Admindash {

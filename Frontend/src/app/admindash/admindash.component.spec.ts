@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Admindash } from './admindash';
+import { Admindash } from './admindash.component';
 
 describe('Admindash', () => {
   let component: Admindash;

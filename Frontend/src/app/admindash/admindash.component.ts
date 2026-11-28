@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Patient } from '../class/patient.class';
-import { PatientService } from '../service/patient.service.';
+import { PatientService } from '../service/patient.service';
 
 @Component({
   selector: 'app-admindash',

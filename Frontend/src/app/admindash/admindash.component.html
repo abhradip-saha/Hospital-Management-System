@@ -68,7 +68,6 @@
     <table class="table table-stripped">
       <thead>
         <tr>
-          <th>ID</th>
           <th>Name</th>
           <th>Age</th>
           <th>Blood</th>
@@ -80,7 +79,6 @@
       <tbody>
         @for (patient of patients(); track patient.id) {
           <tr>
-            <td>{{ patient.id }}</td>
             <td>{{ patient.name }}</td>
             <td>{{ patient.age }}</td>
             <td>{{ patient.blood }}</td>

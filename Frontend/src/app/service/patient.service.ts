@@ -9,7 +9,7 @@ import { Patient } from '../class/patient.class';
 export class PatientService {
   constructor(private httpClient:HttpClient){}
 
-  private baseUrl:string="http://localhost:8080/api/v1";
+  private baseUrl:string="http://localhost:8080/api/patients";
 
   getPatientList():Observable<Patient[]>{
      return this.httpClient.get<Patient[]>(`${this.baseUrl}`);

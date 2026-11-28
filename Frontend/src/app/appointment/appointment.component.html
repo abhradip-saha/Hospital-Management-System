@@ -54,6 +54,9 @@
   /> -->
   <br />
   <a style="color: rgb(86, 86, 86); font-size: xx-large">Current Appointment List</a>
+  @if (actionErrorMessage) {
+    <div class="alert alert-danger mt-3" role="alert">{{ actionErrorMessage }}</div>
+  }
   <div class="tableFixHead">
     <br />
 <table class="table table-stripped">
@@ -64,6 +67,7 @@
       <th>Age</th>
       <th>Symptoms</th>
       <th>Number</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -74,6 +78,12 @@
         <td>{{ appointment.age }}</td>
         <td>{{ appointment.symptoms }}</td>
         <td>{{ appointment.number }}</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button (click)="updateAppointment(appointment)" class="btn btn-primary">Update</button>
+            <button (click)="deleteAppointment(appointment.id)" class="btn btn-danger">Delete</button>
+          </div>
+        </td>
       </tr>
     }
   </tbody>

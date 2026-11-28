@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'admin', component: Admindash },
   { path:'appointmentlist', component: Appointment },
   { path: 'create-appointment', component: CreateAppointmmentComponent },
+  { path: 'edit-appointment/:id', component: CreateAppointmmentComponent },
   { path: '', redirectTo: '/admin', pathMatch: 'full' }
 ];
 

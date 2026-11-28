@@ -14,7 +14,7 @@ import com.Hospital.Management.System.repository.PatientRepository;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController 
-@RequestMapping("/api/v1")
+@RequestMapping("/api/patients")
 public class PatientController {
     private PatientRepository patientRepository;
 
